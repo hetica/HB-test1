@@ -5,6 +5,14 @@
 	 * mais ils sont habituels
 	 */
 	$prenom = "Benoit" ;
+	
+	function multiplier($a, $b = 2) {
+		return $a * $b ;
+	}
+	
+	function aireCercle($rayon) {
+		return pi() * pow($rayon, 2) ;
+	}
 ?>
 
 <!DOCTYPE html>
@@ -17,8 +25,31 @@
 	<body>
 		<h1>Cours PHP</h1>
 		
-		<p>
-			<?php echo "Salut " . $prenom ; ?>
-		</p>
+			<?php 
+			echo "Salut " . $prenom ;
+			
+			echo "<br/>" . multiplier(5) ;
+			$rayon = 6 ;
+			echo "<br/> l'aire de " . $rayon . " est " . aireCercle($rayon) ;
+			?>
+			<h3>Les tableaux</h3>
+			<?php
+			$stagiaires = array(
+				array(	'prenom' => "Alain" ,
+						'age' => 44),
+				array(	'prenom' => "Jean-Michel",
+						'age' => 23),
+				array(	'prenom' => "Abdel", 
+						'age' => 19),
+				array(	'prenom' => "Benoit", 
+						'age' => 49),
+			);
+			
+			foreach ($stagiaires as $personne) {				
+				echo "<p>" . $personne['prenom'] . " a " . $personne['age'] . " ans</p>" ;
+			}
+			
+			
+			?>
 	</body>
 </html>
